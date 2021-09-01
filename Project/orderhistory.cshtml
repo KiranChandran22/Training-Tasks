@@ -1,0 +1,13 @@
+﻿
+@{
+    ViewBag.Title = "orderhistory";
+}
+
+<h2>Search Here to get your order history.</h2><br />
+
+<form id="Gettingdata" method="post" action=@Url.Action("orderhistable")>
+Enter your Name:<input type="text" name="txtmname" />
+<input type="submit" value="Search" name="action">
+<br />
+    </form>
+

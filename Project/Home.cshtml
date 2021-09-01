@@ -1,0 +1,110 @@
+﻿
+@{
+    ViewBag.Title = "Home";
+}
+<style>
+    *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+    body {
+        width: 100%;
+        height: 100vh;
+        background: #e9d6cd;
+        overflow: hidden;
+        cursor: url('../../cursor.png'), auto;
+    }
+img{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 46%;
+    animation: 1s animate ease-in-out;
+}
+ keyframes animate{
+    0%{
+        opacity: 0;
+        transform: scale(.5);
+      }
+    100%{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+/*nav{
+    display: flex;
+    justify-content: center;
+}*/
+/*ul{
+    list-style: none;
+    display: inline;
+}
+ul li{
+    display: inline-block;
+    padding: 30px;
+    font-size: 20px;
+    cursor: pointer;
+}*/
+.content{
+    position: absolute;
+    top: 27vh;
+    left: 10%;
+    width: 33%;
+}
+.content h1{
+    font-size: 60px;
+}
+hr{
+    margin-top: 30px;
+    width: 20%;
+    height: 6px;
+    background: #000;
+}
+.content p{
+    margin-top: 30px;
+    font-size: 16px;
+}
+input{
+    margin-top: 20px;
+    background: #dfa167;
+    border: none;
+    outline: none;
+    letter-spacing: .04em;
+    font-size: 20px;
+    padding: 15px 20px;
+}
+</style>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    
+</head>
+<body>
+
+    @*<nav>
+            <ul>
+                <li>Home</li>
+                <li>Order</li>
+                <li>Menu</li>
+                <li>Contact</li>
+            </ul>
+        </nav>*@
+
+    <div class="content">
+        <h1>Ina's Pizzeria</h1>
+        <hr>
+        <p>We don’t have freezers. We don’t pour cheese from a bag. We make dough from scratch, shred cheese from blocks, and chop veggies by hand. It’s how you’d want to make the best pizza if you had all day to do it.</p>
+        <form id="Gettingdata" method="post" action=@Url.Action("VegPizza")>
+            <input type="submit" value="VEG" name="action">
+            <input type="submit" value="NON VEG" name="action">
+        </form>
+    </div>
+
+    <img src="~/pizza.gif" />
+</body>
+</html>

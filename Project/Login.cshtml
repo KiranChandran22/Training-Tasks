@@ -1,0 +1,85 @@
+﻿@using System.Data
+@{
+    ViewBag.Title = "Login";
+}
+<style>
+    @*@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&family=Poppins:wght@400;500;600&display=swap');*@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body{
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(120deg,#2980b9, #8e44ad);
+  height: 100vh;
+  overflow: hidden;
+}
+.center{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 10px 10px 15px rgba(0,0,0,0.05);
+  opacity:75%;
+}
+.center h1{
+  text-align: center;
+  padding: 20px 0;
+  border-bottom: 1px solid silver;
+}
+
+
+input[type="submit"]{
+  left:30%;
+  width:40%;
+  height: 50px;
+  border: 1px solid;
+  background: #2691d9;
+  border-radius: 25px;
+  font-size: 18px;
+  color: #e9f4fb;
+  font-weight: 700;
+  cursor: pointer;
+  outline: none;
+}
+input[type="submit"]:hover{
+  border-color: #2691d9;
+  transition: .5s;
+}
+    input[type=text] {
+        width: 100px;
+        -webkit-transition: width .35s ease-in-out;
+        transition: width .35s ease-in-out;
+        border: none;
+        border-bottom: 2px solid blue;
+    
+    }
+
+        input[type=text]:focus {
+            width: 250px;
+        }
+</style>
+
+
+<div class="center">
+    <h1>Login</h1>
+    <form id="login" method="post" action=@Url.Action("UpdateRecord")>
+        <br />
+        <div class="txt_field">
+            <label>Order Id:</label><input type="text" name="txtid" readonly value="@Model.Rows[0]["order_id"]" /><br />
+            <label>Name:</label><input type="text" name="txtmname" required /><br />
+            <label>Address:</label> <input type="text" name="txtaddress" required /><br />
+            <label>Phone Number:</label><input type="text" name="txtphno" required /><br />
+        </div>
+        <br /><br />
+        <input type="submit" value="Log In" name="action">
+        <input type="submit" value="Cancel" name="action">
+
+    </form>
+</div>
